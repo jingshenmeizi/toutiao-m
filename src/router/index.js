@@ -40,6 +40,18 @@ const routes = [
     path: '/search',
     name: 'search',
     component: () => import('@/views/search')
+  },
+  {
+    path: '/article/:articleId',
+    name: 'article',
+    component: () => import('@/views/article'),
+    props: true // 开启路由传参
+  },
+  {
+    path: '/user/profile',
+    name: 'user-profile',
+    component: () => import('@/views/user-profile'),
+    props: true // 开启路由传参
   }
 ]
 

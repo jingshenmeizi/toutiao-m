@@ -6,9 +6,9 @@
         <div class="left">
           <van-image round class="avater" :src="userInfo.photo" />
           <span class="text">{{userInfo.name}}</span>
-        </div>
+        </div>  
         <div class="right">
-          <van-button size="mini" round>编辑资料</van-button>
+          <van-button size="mini" round to="/user/profile">编辑资料</van-button>
         </div>
       </div>
       <div class="data-stats">
@@ -63,11 +63,11 @@ export default {
   props: {},
   data() {
     return {
-      userInfo: {}
+      userInfo: {},
     };
   },
   computed: {
-    ...mapState(["user"])
+    ...mapState(["user"]),
   },
   watch: {},
   created() {
@@ -81,7 +81,7 @@ export default {
       // 弹框确认
       this.$dialog
         .confirm({
-          title: "确定退出吗？"
+          title: "确定退出吗？",
         })
         .then(() => {
           // on confirm
@@ -98,8 +98,8 @@ export default {
       } catch (error) {
         this.$toast("获取用户失败，请稍后重试");
       }
-    }
-  }
+    },
+  },
 };
 </script>
  <style lang='less' scoped>

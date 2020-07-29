@@ -1,5 +1,5 @@
 <template>
-  <van-cell class="article-item">
+  <van-cell :to="{name:'article',params:{articleId:article.art_id}}" class="article-item">
     <div class="title van-multi-ellipsis--l2" slot="title">{{article.title}}阿凡達是否阿斯蒂芬哈士大夫哈里斯的法律上的回復a</div>
     <van-image
       fit="cover"

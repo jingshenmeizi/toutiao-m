@@ -1,10 +1,20 @@
 
 import axios from 'axios'
 import store from '@/store'
+import JSONBig from 'json-bigint'
+
 // 这里的request相当于根据指定的配置创建的一个新的axios
 const request = axios.create({
     //基础路径
-    baseURL: 'http://ttapi.research.itcast.cn/'
+    baseURL: 'http://ttapi.research.itcast.cn/',
+    transformResponse: [function (data) {
+        try {
+            return JSONBig.parse(data)
+        } catch (error) {
+            return data;
+        }
+    }],
+
 })
 
 // 请求拦截器

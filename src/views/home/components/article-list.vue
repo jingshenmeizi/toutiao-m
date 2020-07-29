@@ -14,7 +14,7 @@
         finished-text="没有更多了"
         @load="onLoad"
       >
-        <article-item v-for="article in list" :key="article.art_id" :article="article"></article-item>
+        <article-item v-for="(article,index) in list" :key="index" :article="article"></article-item>
         <!-- <van-cell v-for="item in list" :key="item.aut_id" :title="item.title" /> -->
       </van-list>
     </van-pull-refresh>
